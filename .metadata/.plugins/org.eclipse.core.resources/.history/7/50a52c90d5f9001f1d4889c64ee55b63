@@ -1,0 +1,9 @@
+package com.formulario.formularioAlumnos;
+
+public class ConexionBDD {
+
+	public ConexionBDD() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

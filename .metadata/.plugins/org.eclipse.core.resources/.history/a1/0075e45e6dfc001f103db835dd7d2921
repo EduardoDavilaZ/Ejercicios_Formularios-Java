@@ -1,0 +1,35 @@
+package chk;
+
+import javax.swing.JTextField;
+
+public class Validar {
+
+	public Validar() {
+	}
+	
+	public String validarIp(JTextField[] jtfIp) {
+	    String ip = "";
+	    for (int i = 0; i < 4; i++) {
+	        String aux = jtfIp[i].getText();
+	        
+	        // Validar que la longitud esté entre 1 y 3 y que solo contenga números
+	        if (aux.length() > 0 && aux.length() <= 3 && aux.matches("\\d+")) {
+	            int num = Integer.parseInt(aux); // Convertir a número
+	            if (num >= 0 && num <= 255) {
+	                // Si el número es válido, completamos con ceros a la izquierda si es necesario
+	                while (aux.length() < 3) {
+	                    aux = "0" + aux;
+	                }
+	                ip += aux;
+	            } else {
+	                return ""; // IP inválida
+	            }
+	        } else {
+	            return ""; // IP inválida
+	        }
+	    }
+	    return ip;
+	}
+
+
+}

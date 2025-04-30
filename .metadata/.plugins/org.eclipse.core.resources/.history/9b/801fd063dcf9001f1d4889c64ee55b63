@@ -1,0 +1,38 @@
+package com.formulario.formularioAlumnos;
+
+import java.sql.*;
+import javax.swing.*;
+import java.util.*;
+
+public class ConsultasBDD {
+
+    private Connection conexion;
+
+    public ConsultasBDD() {
+        conexion = new ConexionBDD().conectarBD();
+    }
+
+    // Método para generar los JCheckBox según la consulta
+    public ArrayList<JCheckBox> generarCheckBoxes(JPanel jpnEste) {
+        ArrayList<JCheckBox> checkBoxes = new ArrayList<>();
+        try {
+        	Statement consulta = conexion.createStatement();
+        	String sql = "SELECT nombre FROM aficiones";
+        	ResultSet resultado = consulta.executeQuery(sql);
+        	
+        	while(resultado.next() == true) {
+        		String nombreAficion = resultado.getString("nombre");
+        		JCheckBox jcbAficiones = new JCheckBox(nombreAficion);
+        		jpnEste.add(jcbAficiones);
+        	}
+        	
+        } catch (SQLException e) {
+        	e.printStackTrace();
+        }
+
+        return checkBoxes;
+    }
+}
+
+
+

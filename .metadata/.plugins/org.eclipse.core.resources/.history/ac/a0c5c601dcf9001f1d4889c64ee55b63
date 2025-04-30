@@ -1,0 +1,9 @@
+package com.formulario.formularioAlumnos;
+
+public class ConsultasBDD {
+
+	public ConsultasBDD() {
+		// TODO Auto-generated constructor stub
+	}
+
+}
