@@ -1,56 +1,43 @@
-# Eclipse project files
+# === Eclipse ===
 .classpath
 .project
 .settings/
+.metadata/
 
-# Maven build output
+# === Archivos compilados de Java ===
+*.class
+bin/
+target/
+
+# === Build tools ===
+# Maven
+log/
 target/
 pom.xml.tag
-pom.xml.releaseBackup.*
+pom.xml.releaseBackup
 pom.xml.versionsBackup
+pom.xml.next
+release.properties
 
-# Gradle build output
+# Gradle
 .gradle/
 build/
 
-# IntelliJ IDEA project files (pueden estar presentes si se usó IntelliJ alguna vez)
-.idea/
-*.iml
-
-# Compiled Java class files
-*.class
-
-# Executable JAR files
-*.jar
-
-# Log files
+# === Archivos temporales ===
 *.log
-
-# Temporary files and directories
-tmp/
-temp/
 *.tmp
-*.swp
-*.swo
 *.bak
-*.cache
+*.swp
+*~
 
-# Eclipse metadata (pueden ser específicos del workspace)
-.metadata/
-org.eclipse.core.resources/.markers
-
-# Local configuration files (puede que quieras rastrear algunos, ¡cuidado!)
-# config/local.properties
-# application-local.properties
-
-# Test reports
-TEST-*.xml
-surefire-reports/
-failsafe-reports/
-
-# archivos de depuración
-hs_err_pid*
-
-# Otros archivos específicos del sistema operativo
+# === Archivos del sistema ===
 .DS_Store
 Thumbs.db
+
+# === Archivos personales de Eclipse ===
+*.prefs
+
+# === Archivos de paquetes ===
+*.jar
+*.war
+*.ear
